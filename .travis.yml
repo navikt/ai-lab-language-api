@@ -1,0 +1,9 @@
+sudo: required
+language: python
+services:
+- docker
+before_deploy:
+- docker build -t idelab/datalab-language-api:$TRAVIS_TAG .
+deploy:
+- docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PW
+- docker push idelab/datalab-language-api:$TRAVIS_TAG
