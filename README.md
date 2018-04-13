@@ -1,5 +1,5 @@
 
-## Using fasttext to detect language
+## Demo docker container using fastText to detect language
 
 ```
 docker build -t datalab-language-api .
