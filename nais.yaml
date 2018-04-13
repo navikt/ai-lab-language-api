@@ -1,0 +1,4 @@
+image: repo.adeo.no:5443/datalab-language-api
+prometheus: 
+  enabled: true
+  path: /prometheus
