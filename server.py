@@ -22,7 +22,6 @@ async def post_language(request):
     return web.json_response(res)
 
 
-
 app = web.Application()
 app.router.add_get('/', about)
 app.router.add_post('/language', post_language)

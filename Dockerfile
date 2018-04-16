@@ -19,4 +19,5 @@ ADD https://s3-us-west-1.amazonaws.com/fasttext-vectors/supervised_models/lid.17
 
 COPY server.py /
 
+EXPOSE 8080
 CMD [ "gunicorn", "-c", "gunicorn.conf", "server:app" ]
