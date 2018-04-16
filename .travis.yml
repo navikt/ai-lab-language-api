@@ -1,7 +1,7 @@
 services:
 - docker
 before_deploy:
-- docker build -t idelab/datalab-language-api:$TRAVIS_TAG .
+- docker build -t idelab/datalab-language-api .
 deploy:
     provider: script
     script: ./deploy.sh

@@ -1,3 +1,11 @@
 #!/bin/bash
+
+docker tag "idelab/datalab-language-api:latest"
+
+echo 'Docker Login - BEGIN'
 docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PWD
-docker push "idelab/datalab-language-api:$TRAVIS_TAG"
+echo 'Docker Login - END'
+
+echo 'Docker Push - BEGIN'
+docker push "idelab/datalab-language-api:latest"
+echo 'Docker Push - END'
