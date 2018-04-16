@@ -1,9 +1,14 @@
-services:
-- docker
-before_deploy:
-- docker build -t idelab/datalab-language-api .
-deploy:
-    provider: script
-    script: ./deploy.sh
-    on:
-        tags: true
+sudo: true
+dist: trusty
+
+jobs:
+  include:
+    - stage: build docker image
+      script:
+      - echo "$DOCKERHUB_PWD" | docker login -u "$DOCKERHUB_USER" --password-stdin
+      - docker build -t datalab-language-api .
+      - docker images
+      - docker tag datalab-language-api $DOCKERHUB_USER/datalab-language-api
+      - docker push $DOCKERHUB_USER/datalab-language-api
+    - stage: test
+      script: docker run --rm $DOCKERHUB_USER/datalab-language-api cat server.py
