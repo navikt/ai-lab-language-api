@@ -15,7 +15,7 @@ http://localhost:8080
 
 http://localhost:8080/language
 
-The notebooks folders contain a jypyter notebook with examples
+The notebooks folders contain a jupyter notebook with examples
 
 
 
